@@ -21,3 +21,4 @@
 ;
 ; One solution:
 ; both could receive the wrapped arg and concat logs, but that would duplicate code
+; another solution: follow to step-3.clj

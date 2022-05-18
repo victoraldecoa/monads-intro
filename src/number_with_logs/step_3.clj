@@ -1,5 +1,12 @@
 (ns number-with-logs.step-3)
 
+; This solution implements all the math operations with the same signature
+; and it is as simple as possible to be called as is.
+; It defers the log concatenation logic to another function: `run-with-logs`, therefore avoiding duplication.
+;
+; {:result x :logs logs} is a monad. `wrap-with-logs` is its wrapper (similar to maybe/just or maybe/nothing or
+; either/left or either/right). `run-with-logs` is similar to fmap, and finally calling :result on it unwraps it.
+
 (defn square
   [x]
   {:result (* x x)
