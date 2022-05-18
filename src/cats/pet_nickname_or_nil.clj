@@ -29,7 +29,7 @@
           (let [nickname (user-pet-nickname pet)]
             nickname))))))
 
-; (pet-nickname-in-traditional-languages)
+; (repeatedly 10 pet-nickname-in-traditional-languages)
 ; => ("Ada" nil nil "Ada" nil "Ada" nil nil "Ada" "Ada")
 
 (defn pet-nickname-in-clojure
