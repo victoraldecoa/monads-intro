@@ -29,7 +29,7 @@
 (defn kill-dragon [{:keys [dragons]}]
   (m/fmap dec dragons))
 
-; now we can kill everyone's dragons without a null-ref
+; now we can easily kill everyone's dragons without any null-checks
 (map kill-dragon (maybe-dragons))
 ;=> (#<Just 2> #<Nothing> #<Nothing>)
 
