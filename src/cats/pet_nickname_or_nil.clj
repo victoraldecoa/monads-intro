@@ -1,25 +1,24 @@
 (ns cats.pet-nickname-or-nil)
 
 (defn fetch
-  [x]
+  [key x]
   {:pre [(some? x)]}
   (if (< (rand) 0.8)
-    x
+    (key x)
     nil))
 
 (defn current-user
   []
-  (let [user {:name "Vic"
-              :pet  {:nickname "Ada"}}]
-    (fetch user)))
+  {:name "Vic"
+   :pet  {:nickname "Ada"}})
 
 (defn user-pet
-  [{:keys [pet]}]
-  (fetch pet))
+  [user]
+  (fetch :pet user))
 
 (defn user-pet-nickname
-  [{:keys [nickname]}]
-  (fetch nickname))
+  [pet]
+  (fetch :nickname pet))
 
 (defn pet-nickname-in-traditional-languages []
   (let [user (current-user)]
