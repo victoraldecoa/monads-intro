@@ -32,3 +32,10 @@
   (-> (current-user)
       user-pet
       user-pet-nickname))
+
+(repeatedly 10 pet-nickname)
+
+; Note: if you change `fetch` to always return the correct data, the code in this example continues to just work.
+; If you do that in the Maybe or the Either examples, it breaks all the users of pet-nickname, unless you continue
+; to return maybe/either forever. You can't stop returning them in a retro-compatible way.
+; See [Maybe Not](https://www.youtube.com/watch?v=YR5WdGrpoug) for more.

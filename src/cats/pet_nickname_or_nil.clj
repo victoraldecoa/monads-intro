@@ -39,11 +39,11 @@
           user-pet
           user-pet-nickname))
 
-; (repeatedly 10 pet-nickname-in-clojure)
+(repeatedly 10 pet-nickname-in-clojure)
 ; => ("Ada" nil nil "Ada" nil "Ada" nil nil "Ada" "Ada")
 
 (defn pet-nickname-naive
-  "This throws null-ref. If we didn't nil-check on `fetch`, naive works perfectly"
+  "This throws AssertionError. If we didn't nil-check on `fetch`, naive would also work perfectly"
   []
   (-> (current-user)
       user-pet

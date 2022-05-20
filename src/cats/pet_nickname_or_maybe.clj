@@ -26,8 +26,9 @@
       user-pet
       user-pet-nickname
       m/extract))
+; It's possible to replace m/extract by maybe/from-maybe or something like (maybe/from-maybe "Fetching pet error")
 
-; (pet-nickname)
+(repeatedly 10 pet-nickname)
 ; => ("Ada" nil nil "Ada" nil "Ada" nil nil "Ada" "Ada")
 ;
 ; Do compare the final result both with cats.pet-nickname-or-nil/pet-nickname-in-traditional-languages

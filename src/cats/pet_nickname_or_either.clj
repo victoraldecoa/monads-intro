@@ -31,5 +31,7 @@
       user-pet-nickname
       m/extract))
 
+(repeatedly 10 pet-nickname)
+
 ; Next step: let's see how we can solve this the Clojure way, without cats, in
 ; cats.pet-nickname-or-errors.clj
