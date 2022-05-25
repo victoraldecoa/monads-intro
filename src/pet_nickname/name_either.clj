@@ -1,4 +1,4 @@
-(ns cats.pet-nickname-or-either
+(ns pet-nickname.name-either
   (:require [cats.monad.either :as either]
             [cats.core :as m]))
 

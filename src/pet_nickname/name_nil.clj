@@ -1,4 +1,4 @@
-(ns cats.pet-nickname-or-nil)
+(ns pet-nickname.name-nil)
 
 (defn fetch
   [key x]

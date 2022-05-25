@@ -1,4 +1,4 @@
-(ns cats.pet-nickname-or-maybe
+(ns pet-nickname.name-maybe
   (:require [cats.core :as m]
             [cats.monad.maybe :as maybe]))
 (defn fetch
