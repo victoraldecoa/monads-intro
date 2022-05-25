@@ -1,6 +1,7 @@
 (ns cats.pet-nickname-or-either
   (:require [cats.monad.either :as either]
             [cats.core :as m]))
+
 (defn fetch
   [key data]
   (cond
@@ -15,21 +16,18 @@
 
 (defn user-pet
   [user]
-  (either/branch-right
-    user
-    #(fetch :pet %)))
+  (fetch :pet user))
 
 (defn user-pet-nickname
   [pet]
-  (either/branch-right
-    pet
-    #(fetch :nickname %)))
+  (fetch :nickname pet))
 
 (defn pet-nickname []
-  (-> (current-user)
-      user-pet
-      user-pet-nickname
-      m/extract))
+  (m/extract
+    (m/mlet [user (current-user)
+             pet (user-pet user)
+             name (user-pet-nickname pet)]
+      (m/return name))))
 
 (repeatedly 10 pet-nickname)
 
