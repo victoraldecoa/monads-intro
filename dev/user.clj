@@ -10,4 +10,8 @@
   Or run `(dev)` to just load code and switch to `dev` without
   starting the system."
   (:require
-   [com.stuartsierra.component.user-helpers :refer [dev go reset]]))
+    [com.stuartsierra.component.user-helpers :refer [dev go reset]]
+    [utils.either-flow-extension]
+    [schema.core :as s]))
+
+(s/set-fn-validation! true)

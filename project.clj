@@ -5,7 +5,9 @@
             :url  "http://choosealicense.com/"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [com.stuartsierra/component "1.1.0"]
-                 [funcool/cats "2.4.2"]]
+                 [funcool/cats "2.4.2"]
+                 [fmnoise/flow "4.2.1"]
+                 [prismatic/schema "1.1.11"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "1.3.0"]
                                   [com.stuartsierra/component.repl "1.0.0"]]
                    :source-paths ["dev"]}})

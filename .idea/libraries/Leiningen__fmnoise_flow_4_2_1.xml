@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: fmnoise/flow:4.2.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/fmnoise/flow/4.2.1/flow-4.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
