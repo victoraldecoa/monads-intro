@@ -1,5 +1,9 @@
 (ns pet-nickname.name-errors)
-(declare until-err->)
+
+(defn run-if-not-err [err-fn x & fs]
+  (if (and (not (err-fn x)) (seq fs))
+    (recur err-fn ((first fs) x) (rest fs))
+    x))
 
 (defn fetch
   [key data]
@@ -24,17 +28,12 @@
 (defn http-err? [{:keys [code] :or {code 200}}] (>= code 400))
 
 (defn pet-nickname []
-  (until-err-> http-err?
-    (current-user)
-    user-pet
-    user-pet-nickname))
+  (run-if-not-err http-err?
+                  (current-user)
+                  user-pet
+                  user-pet-nickname))
 
 (repeatedly 10 pet-nickname)
-
-(defn until-err-> [err-fn x & fs]
-  (if (and (not (err-fn x)) (seq fs))
-    (recur err-fn ((first fs) x) (rest fs))
-    x))
 
 ; Note: if you change `fetch` to always return the correct data, the code in this example continues to just work.
 ; If you do that in the Maybe or the Either examples, it breaks all the users of pet-nickname, unless you continue
