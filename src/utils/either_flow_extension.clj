@@ -6,11 +6,11 @@
 
 (extend-protocol f/Flow
   Right
-  (?ok [this f] (f (m/extract this)))
-  (?err [this _] (m/extract this))
-  (?throw [this] (m/extract this))
+  (?ok [this f] (f @this))
+  (?err [this _] @this)
+  (?throw [this] @this)
 
   Left
-  (?ok [this _] (m/extract this))
-  (?err [this f] (f (ex-info "Either.Left" (m/extract this))))
-  (?throw [this] (throw (ex-info "Either.Left" (m/extract this)))))
+  (?ok [this _] @this)
+  (?err [this f] (f (ex-info "Either.Left" @this)))
+  (?throw [this] (throw (ex-info "Either.Left" @this))))

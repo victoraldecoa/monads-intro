@@ -23,11 +23,10 @@
   (fetch :nickname pet))
 
 (defn pet-nickname []
-  (m/extract
-    (m/mlet [user (current-user)
-             pet (user-pet user)
-             name (user-pet-nickname pet)]
-      (m/return name))))
+  @(m/mlet [user (current-user)
+            pet (user-pet user)
+            name (user-pet-nickname pet)]
+     (m/return name)))
 
 (repeatedly 10 pet-nickname)
 

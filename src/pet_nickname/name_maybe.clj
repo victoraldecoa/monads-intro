@@ -22,11 +22,11 @@
   (fetch :nickname pet))
 
 (defn pet-nickname []
-  (-> (current-user)
-      user-pet
-      user-pet-nickname
-      m/extract))
-; It's possible to replace m/extract by maybe/from-maybe or something like (maybe/from-maybe "Fetching pet error")
+  @(-> (current-user)
+       user-pet
+       user-pet-nickname))
+
+; It's possible to replace the '@' deref by maybe/from-maybe or something like (maybe/from-maybe "Fetching pet error")
 
 (repeatedly 10 pet-nickname)
 ; => ("Ada" nil nil "Ada" nil "Ada" nil nil "Ada" "Ada")

@@ -25,12 +25,11 @@
     (either/left {:error "loans error"})))
 
 (defn get-info []
-  (m/extract
-    (m/mlet [{:keys [token] :as auth} (auth "hi@either.com")
-             {acc-id :id :as acc} (acc token)
-             loans (loans token acc-id)]
-      (m/return {:auth auth
-                 :account acc
-                 :loans loans}))))
+  @(m/mlet [{:keys [token] :as auth} (auth "hi@either.com")
+            {acc-id :id :as acc} (acc token)
+            loans (loans token acc-id)]
+     (m/return {:auth    auth
+                :account acc
+                :loans   loans})))
 
 (repeatedly 10 get-info)

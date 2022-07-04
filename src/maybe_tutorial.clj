@@ -37,9 +37,13 @@
 (def dany-dragons (-> (maybe-dragons) first :dragons))
 (m/extract dany-dragons)
 ; => 3
+; extracting with clojure's deref ('@') also works
+; this will be our preferred way from now on
+@dany-dragons
+; => 3
 
 (def arya-dragons (-> (maybe-dragons) last :dragons))
-(m/extract arya-dragons)
+@arya-dragons
 ; => nil
 
 ; you can also use maybe/from-maybe, with the additional
