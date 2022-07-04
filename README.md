@@ -3,19 +3,24 @@
 This project demonstrates some usages for [funcool/cats](https://github.com/funcool/cats)
 and explains Monads in a practical way, also exemplifying how one could use it in Clojure (or not).
 
-Most of it is a direct translation of the excelent video [The Absolute Best
-Intro to Monads For Software Engineers](https://youtu.be/C2w45qRc3aU), which
-I totally recommend.
+If you want a very quick overview with examples, you can start looking at
+[maybe_tutorial.clj](./src/maybe_tutorial.clj).
 
-## tl;dr - ns order:
+If you want a slightly deeper dive, the [number-with-logs](./src/number_with_logs) and 
+[pet-nickname](./src/pet_nickname) namespaces are a direct translation of the excellent video
+[The Absolute Best Intro to Monads For Software Engineers](https://youtu.be/C2w45qRc3aU),
+which I totally recommend.
+
+## Project Guide for the Deeper Dive
+
+### tl;dr - ns order:
 
 1. number-with-logs.step-1 to 4
-2. cats.pet-nickname-or-nil
-3. cats.pet-nickname-or-maybe
-4. cats.pet-nickname-or-errors
-5. cats.pet-nickname-or-either
-
-## Project Guide
+2. pet-nickname.name-nil
+3. pet-nickname.name-maybe
+4. pet-nickname.name-either
+5. pet-nickname.name-errors
+6. pet-nickname.name-exceptions
 
 ### 1. Number With Logs
 
