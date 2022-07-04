@@ -11,10 +11,11 @@ If you want a slightly deeper dive, the [number-with-logs](./src/number_with_log
 [The Absolute Best Intro to Monads For Software Engineers](https://youtu.be/C2w45qRc3aU),
 which I totally recommend.
 
-For a fancier, more "real-life" example, go to [client-schema](./src/http_client/client_schema.clj).
-It mixes all types of patterns, throwing exceptions, returning exceptions and returning monads and uses
-[fmnoise/flow](https://github.com/fmnoise/flow) to treat them gracefully. If it gets too overwhelming,
-check the other files in the same folder, which solves the same problem one pattern at a time.
+For a Clojure error treatment exercise (using only Either, and drifting away from Monads, honestly), go to 
+[client-schema](./src/http_client/client_schema.clj). It mixes all types of patterns, throwing exceptions,
+returning exceptions and returning monads and uses [fmnoise/flow](https://github.com/fmnoise/flow)
+to treat them gracefully. If it gets too overwhelming, check the other files in the same folder,
+which solves the same problem one pattern at a time.
 
 ## Project Guide for the Deeper Dive
 
